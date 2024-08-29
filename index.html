@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        :root {
+            --button-bg: white;
+            --button-text: black;
+            --button-hover-opacity: 0.8;
+            --primary-color: #fff;
+            --text-color: #f0f0f0;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .background-clip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--primary-color);
+            z-index: 1;
+        }
+
+        .content h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+
+        .animated-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-color);
+            margin: 1rem 0;
+            white-space: nowrap;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .animated-text span {
+            display: inline-block;
+            animation: scrollText 20s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .content a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--button-text);
+            background-color: var(--button-bg);
+            border: none;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .content a:hover {
+            opacity: var(--button-hover-opacity);
+            transform: scale(1.05);
+        }
+
+        .button-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 2;
+        }
+
+        .know-more-button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .know-more-button:hover {
+            opacity: var(--button-hover-opacity);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video autoplay loop muted playsinline class="background-clip">
+            <source src="images/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="content">
+            <h1>Coming Soon</h1>
+            <div class="animated-text">
+                <span id="animated-text">A Prem Lh's Portfolio Website made with ❤️</span>
+            </div>
+            <a href="https://github.com/hzllxhound">Know more</a>
+        </div>
+
+    
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to update the text at intervals
+        const texts = [
+            "A Prem Lh's Portfolio Website made with ❤️",
+        ];
+
+        let index = 0;
+        const textElement = document.getElementById('animated-text');
+
+        function updateText() {
+            textElement.textContent = texts[index];
+            index = (index + 1) % texts.length;
+        }
+
+        setInterval(updateText, 5000); // Change text every 5 seconds
+    </script>
+</body>
+</html>

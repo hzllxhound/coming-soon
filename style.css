@@ -1,0 +1,93 @@
+/* style.css */
+
+:root {
+    --button-bg: white;
+    --button-text: black;
+    --button-hover-opacity: 0.8;
+    --primary-color: #fff;
+    --secondary-color: #000;
+    --font-family: 'Arial', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-family: var(--font-family);
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background-clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--primary-color);
+    z-index: 1;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.content a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--button-text);
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 9999px; /* Fully rounded corners */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.content a:hover {
+    opacity: var(--button-hover-opacity);
+    transform: scale(1.05);
+}
+
+.button-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 2;
+}
+
+.know-more-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 9999px; /* Fully rounded corners */
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.know-more-button:hover {
+    opacity: var(--button-hover-opacity);
+    transform: scale(1.05);
+}
